@@ -1,0 +1,8 @@
+{% extends 'default.html' %}
+{% block content %}
+  <article>
+    <h1>{{ page.title }}</h1>
+    <em>{{ page.date|date('Y-m-d') }}</em>
+    {{ content|safe }}
+  </article>
+{% endblock %}

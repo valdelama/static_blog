@@ -1,0 +1,36 @@
+$link-color: #3498db;
+
+body {
+  font-family: sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+a {
+  color: $link-color;
+  transition: color .5s ease-in-out;
+
+  &:hover {
+    color: darken($link-color, 20%);
+  }
+}
+
+h1 {
+  margin: 40px 0;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #eee;
+}
+
+.article-overview {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #eee;
+
+  &:last-child {
+    border: none;
+  }
+}

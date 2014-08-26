@@ -1,0 +1,15 @@
+{% set page.title = 'Home' %}
+{% extends 'default.html' %}
+{% block content %}
+  <h1>Gulp Static Blog</h1>
+  {% for post in site.posts %}
+    <article class="article-overview">
+      <h2>{{post.title}}</h2>
+      <em>{{ post.date|date('Y-m-d') }}</em>
+      <p>
+        {{ post.summary|safe }}
+        <a href="{{ post.url }}">Keep reading...</a>
+      </p>
+    </article>
+  {% endfor %}
+{% endblock %}
