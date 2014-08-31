@@ -1,0 +1,620 @@
+{% set page.title = 'MOSTO - A lightweight framework for forms' %}
+{% set page.head_extras = '
+  <link href="/css/standalone/forms.css" rel="stylesheet">
+  <style>
+  form {
+    font: 13px/18px Arial, Helvetica, Geneva, sans-serif;
+  }
+  </style>
+' %}
+{% extends 'default.html' %}
+
+{% block content %}
+<h3>Basic "Stacked" Form - <small>All inputs below the labels</small></h3>
+
+<form>
+
+  <label>Name<input type="text" placeholder="Name" tabindex="1" autofocus></label>
+
+  <label>
+    Email address
+    <input type="email" placeholder="Email address" tabindex="1">
+  </label>
+
+  <label>
+    Your message
+    <textarea tabindex="1"></textarea>
+  </label>
+
+  <div class="label-group">
+    Which is better?
+    <label>
+      <input type="radio" name="cartoons" value="simpsons" tabindex="1">The Simpsons
+    </label>
+    <label>
+      <input type="radio" name="cartoons" value="family_guy" tabindex="1">Family Guy
+    </label>
+    <label>
+      <input type="radio" name="cartoons" value="southpark" tabindex="1">Southpark
+    </label>
+  </div>
+
+  <div class="label-group">
+    What kind of things would you like to to receive alerts about?
+    <label>
+      <input type="checkbox" name="notifications" value="free_beer" tabindex="1">Parties with free beer
+    </label>
+    <label>
+      <input type="checkbox" name="notifications" value="gps" tabindex="1">Car keys with built-in GPS tracking
+    </label>
+    <label>
+      <input type="checkbox" name="notifications" value="apps" tabindex="1">Smart phone apps to help you find your car
+    </label>
+    <label>
+      <input type="checkbox" name="notifications" value="giveaway" tabindex="1">Self driving cars for returning from events with free beer
+    </label>
+  </div>
+
+  <label>
+    Favourite beer
+    <select tabindex="1">
+      <option>Heineken</option>
+      <option>Carlsberg</option>
+      <option>Stella Artois</option>
+      <option>Cronenberg</option>
+      <option>Guiness</option>
+      <option>Amstel</option>
+      <option>Corona</option>
+    </select>
+  </label>
+
+  <div class="submit-wrapper">
+    <button type="submit" class="button primary">Send</button>
+    <a href="#" class="button">Cancel</a>
+  </div>
+
+</form>
+
+<hr>
+
+<h3>Horizontal form - <small>All inputs and labels inline</small></h3>
+
+<form class="form-horizontal">
+
+  <label><div>Name</div><input type="text" placeholder="Name" tabindex="1"></label>
+
+  <label>
+    <div>Email</div>
+    <input type="text" placeholder="Email" tabindex="1">
+  </label>
+
+  <label>
+    <div>Your message</div>
+    <textarea tabindex="1" placeholder="Your message"></textarea>
+  </label>
+
+  <label>
+    <div>Favourite beer</div>
+    <select tabindex="1">
+      <option>Heineken</option>
+      <option>Carlsberg</option>
+      <option>Stella Artois</option>
+      <option>Cronenberg</option>
+      <option>Guiness</option>
+      <option>Amstel</option>
+      <option>Corona</option>
+    </select>
+  </label>
+
+  <div class="label-group">
+    <div>Which is better?</div>
+    <label>
+      <input type="radio" name="cartoons" value="simpsons" tabindex="1">The Simpsons
+    </label>
+    <label>
+      <input type="radio" name="cartoons" value="family_guy" tabindex="1">Family Guy
+    </label>
+    <label>
+      <input type="radio" name="cartoons" value="southpark" tabindex="1">Southpark
+    </label>
+  </div>
+
+  <div class="submit-wrapper">
+    <button type="submit" class="button primary">Send</button>
+  </div>
+
+</form>
+
+<hr>
+
+<h3>Help messages - <small>form  hints</small></h3>
+
+<h4>Stacked</h4>
+
+<form>
+  <label>
+    Name
+    <input type="text" placeholder="Name" tabindex="1">
+    <span class="message">Please enter your full name</span>
+  </label>
+  <label>
+    Email address
+    <input type="email" placeholder="Email address" tabindex="1">
+    <span class="message">Must be a valid email address</span>
+  </label>
+</form>
+
+<h4>Stacked with messages inline</h4>
+<form class="help-inline">
+  <label><div>Name</div><input type="text" placeholder="Name" tabindex="1"><span class="message">Please enter your full name</span></label>
+  <label>
+    <div>Email address</div>
+    <input type="email" placeholder="Email address" tabindex="1"><span class="message">Must be a valid email address</span>
+  </label>
+</form>
+
+<h4>Horizontal form</h4>
+<form class="form-horizontal">
+  <label><div>Name</div><input type="text" placeholder="Name" tabindex="1"><span class="message">Please enter your full name</span></label>
+  <label>
+    <div>Email address</div>
+    <input type="email" placeholder="Email address" tabindex="1"><span class="message">Must be a valid email address</span>
+  </label>
+  <button type="submit" class="button">Login</button>
+</form>
+
+<h4>Horizontal form with help below</h4>
+<form class="form-horizontal message-below">
+  <label>
+    <div>Name</div>
+    <input type="text" placeholder="Name" tabindex="1">
+    <span class="message">Please enter your full name</span>
+  </label>
+  <label>
+    <div>Email address</div>
+    <input type="email" placeholder="Email address" tabindex="1">
+    <span class="message">Must be a valid email address</span>
+  </label>
+</form>
+
+<h4>Help appears on :focus <small>- CSS only!</small></h4>
+<form>
+  <label>
+    Name
+    <input type="text" placeholder="Name" tabindex="1">
+    <span class="message hint">Please enter your full name</span>
+  </label>
+  <label>
+    Email address
+    <input type="email" placeholder="Email address" tabindex="1">
+    <span class="message hint">Must be a valid email address</span>
+  </label>
+</form>
+<form class="form-horizontal">
+  <label>
+    <div>Name</div>
+    <input type="text" placeholder="Name" tabindex="1">
+    <span class="message hint">Please enter your full name</span>
+  </label>
+  <label>
+    <div>Email address</div>
+    <input type="email" placeholder="Email address" tabindex="1">
+    <span class="message hint">Must be a valid email address</span>
+  </label>
+</form>
+
+<hr>
+<h3>Dimensions</h3>
+<form class="form-horizontal">
+  <label>
+    <div>Size 1</div>
+    <input type="text" tabindex="1" class="size1">
+  </label>
+  <label>
+    <div>Size 2</div>
+    <input type="text" tabindex="1" class="size2">
+  </label>
+  <label>
+    <div>Size 3</div>
+    <input type="text" tabindex="1" class="size3">
+  </label>
+  <label>
+    <div>Size 4</div>
+    <input type="text" tabindex="1" class="size4">
+  </label>
+  <label>
+    <div>Size 5</div>
+    <input type="text" tabindex="1" class="size5">
+  </label>
+  <label>
+    <div>Size 6</div>
+    <input type="text" tabindex="1" class="size6">
+  </label>
+  <label>
+    <div>Size 7</div>
+    <input type="text" tabindex="1" class="size7">
+  </label>
+  <label>
+    <div>Size 8</div>
+    <input type="text" tabindex="1" class="size8">
+  </label>
+  <label>
+    <div>Size 9</div>
+    <input type="text" tabindex="1" class="size9">
+  </label>
+  <label>
+    <div>Size 10</div>
+    <input type="text" tabindex="1" class="size10">
+  </label>
+  <label>
+    <div>Size 11</div>
+    <input type="text" tabindex="1" class="size11">
+  </label>
+  <label>
+    <div>Size 12</div>
+    <input type="text" tabindex="1" class="size12">
+  </label>
+  <label>
+    <div>Mini</div>
+    <input type="text" tabindex="1" class="mini">
+  </label>
+  <label>
+    <div>Small</div>
+    <input type="text" tabindex="1" class="small">
+  </label>
+  <label>
+    <div>Medium</div>
+    <input type="text" tabindex="1">
+    <span class="message">(default)</span>
+  </label>
+  <label>
+    <div>Large</div>
+    <input type="text" tabindex="1" class="large">
+  </label>
+  <label>
+    <div>Xlarge</div>
+    <input type="text" tabindex="1" class="xl">
+  </label>
+</form>
+
+<hr>
+<h3>Prepended and appended inputs</h3>
+
+<form class="form-horizontal">
+
+  <h4>Prepend</h4>
+  <label>
+    <div>Amount</div>
+    <i class="prepend">$</i>
+    <input type="text" placeholder="Amount" tabindex="1" class="size3">
+    <span class="message">How much would you like to donate?<span>
+  </label>
+
+  <h5>With number input</h5>
+  <label>
+    <div>Amount</div>
+    <i class="prepend">$</i>
+    <input type="number" placeholder="Amount" tabindex="1">
+    <span class="message">How much would you like to donate?<span>
+  </label>
+
+  <h4>Append</h4>
+  <label>
+    <div>Amount</div>
+    <input type="text" placeholder="Amount" tabindex="1" class="appended size3">
+    <i class="append">&euro;</i>
+    <span class="message">How much would you like to donate?<span>
+  </label>
+
+  <h4>Both</h4>
+  <label>
+    <div>Amount</div>
+    <i class="prepend">$</i>
+    <input type="text" placeholder="Amount" tabindex="1" class="appended size3">
+    <i class="append">.00</i>
+    <span class="message">How much would you like to donate?<span>
+  </label>
+</form>
+
+<form>
+  <h4>Stacked form</h4>
+  <label>
+    <div>Amount</div>
+    <i class="prepend">$</i>
+    <input type="text" placeholder="Amount" tabindex="1" class="appended size3">
+    <i class="append">.00</i>
+    <span class="message">How much would you like to donate?<span>
+  </label>
+</form>
+
+<hr>
+<h3>Search</h3>
+<form>
+  <label>
+    <input type="search" class="search-input" placeholder="Search here..." tabindex="1">
+    <button type="submit" class="search-submit">Go</button>
+  </label>
+</form>
+
+
+<hr>
+
+
+<h3>Validation and error messages</h3>
+
+<h5>Stacked</h5>
+<form>
+  <label class="error">
+    Email address
+    <input type="email" value="bob@something.domain" tabindex="1">
+    <span class="message">Please use a valid email address</span>
+  </label>
+</form>
+
+<h5>Horizontal</h5>
+<form class="form-horizontal">
+  <label class="error">
+    <div>Email address</div>
+    <input type="email" value="bob@something.domain" tabindex="1">
+    <span class="message">Please use a valid email address</span>
+  </label>
+</form>
+
+<h5>Checkbox</h5>
+<form>
+  <label class="error">
+    <input type="checkbox">I agree to the terms and conditions
+  </label>
+</form>
+
+<hr>
+
+<h3>Log in form</h3>
+<form>
+  <div class="label-group inline">
+    <label>
+      <input type="text" placeholder="Username" class="size8" tabindex="1">
+    </label>
+    <label>
+      <input type="password" placeholder="Password" class="size8" tabindex="1">
+    </label>
+    <button type="submit" class="button primary">Log in</button>
+  </div>
+</form>
+
+<hr>
+<h3>Required fields</h3>
+
+<h4>Stacked form</h4>
+<form>
+  <label class="required">
+    Email
+    <input type="email" tabindex="1">
+  </label>
+</form>
+
+<h4>Horizontal form</h4>
+<form class="form-horizontal">
+  <label class="required">
+    <div>Email</div>
+    <input type="email" tabindex="1">
+  </label>
+</form>
+
+<hr>
+
+<h3>Exceptions</h3>
+
+<h4>Stacked form with horizontal inputs</h4>
+
+<form>
+
+  <div class="label-group inline">
+    Which is better?
+    <label>
+      <input type="radio" name="cartoons" value="simpsons" tabindex="1">The Simpsons
+    </label>
+    <label>
+      <input type="radio" name="cartoons" value="family_guy" tabindex="1">Family Guy
+    </label>
+    <label>
+      <input type="radio" name="cartoons" value="southpark" tabindex="1">Southpark
+    </label>
+  </div>
+
+
+  <div class="label-group inline">
+    <label>
+      Day
+      <select class="size5">
+        <option>Monday</option>
+      </select>
+    </label>
+    <label>
+      Month
+      <select class="size5">
+        <option>January</option>
+      </select>
+    </label>
+  </div>
+</form>
+
+
+<h4>Horizontal form with inputs below</h4>
+<form class="form-horizontal">
+  <label class="input-below">
+    <div>Which of the following beers is your favourite?</div>
+    <select tabindex="1">
+      <option>Heineken</option>
+      <option>Carlsberg</option>
+      <option>Stella Artois</option>
+      <option>Cronenberg</option>
+      <option>Guiness</option>
+      <option>Amstel</option>
+      <option>Corona</option>
+    </select>
+  </label>
+
+  <div class="label-group input-below">
+    <div>What kind of things would you like to to receive alerts about?</div>
+    <label>
+      <input type="checkbox" name="notifications" value="free_beer" tabindex="1">Parties with free beer
+    </label>
+    <label>
+      <input type="checkbox" name="notifications" value="monkey" tabindex="1">Car keys with built-in GPS tracking
+    </label>
+    <label>
+      <input type="checkbox" name="notifications" value="monkey" tabindex="1">Smart phone apps to help you find your car
+    </label>
+    <label>
+      <input type="checkbox" name="notifications" value="giveaway" tabindex="1">Self driving cars for returning from events with free beer
+    </label>
+  </div>
+</form>
+
+<h4>Horizontal form with stacked inputs</h4>
+<form class="form-horizontal">
+  <div class="label-group stacked">
+    <div>What kind of things would you like to to receive alerts about?</div>
+    <label>
+      <input type="checkbox" name="notifications" value="free_beer" tabindex="1">Parties with free beer
+    </label>
+    <label>
+      <input type="checkbox" name="notifications" value="monkey" tabindex="1">Car keys with built-in GPS tracking
+    </label>
+    <label>
+      <input type="checkbox" name="notifications" value="monkey" tabindex="1">Smart phone apps to help you find your car
+    </label>
+    <label>
+      <input type="checkbox" name="notifications" value="giveaway" tabindex="1">Self driving cars for returning from events with free beer
+    </label>
+  </div>
+
+</form>
+
+
+<hr>
+
+<h3>Fieldsets and legends</h3>
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Account details</legend>
+    <label>
+      <div>Username</div>
+      <input type="text" placeholder="Username" tabindex="1">
+      <span class="message hint">Must be at least five characters</span>
+    </label>
+    <label>
+      <div>Password</div>
+      <input type="password" placeholder="Password" tabindex="1">
+      <span class="message hint">Must contain one number and one capital letter</span>
+    </label>
+    <label>
+      <div>Repeat password</div>
+      <input type="password" placeholder="Password" tabindex="1">
+    </label>
+    <label>
+      <div>Email address</div>
+      <input type="email" placeholder="Email" tabindex="1">
+      <span class="message hint">Must be a valid email address</span>
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Address</legend>
+    <label>
+      <div>First name</div>
+      <input type="text" placeholder="First name" tabindex="1">
+    </label>
+    <label>
+      <div>Last name</div>
+      <input type="text" placeholder="Last name" tabindex="1">
+    </label>
+    <label>
+      <div>Address</div>
+      <textarea placeholder="Address (House number and street)" tabindex="1"></textarea>
+    </label>
+    <label>
+      <div>City</div>
+      <input type="text" placeholder="City" tabindex="1">
+    </label>
+    <label>
+      <div>Postcode</div>
+      <input type="text" placeholder="Postcode" tabindex="1">
+    </label>
+    <label>
+      <div>Country</div>
+      <select tabindex="1">
+        <option>Spain</option>
+        <option>United Kingdom</option>
+      </select>
+    </label>
+  </fieldset>
+</form>
+
+
+<hr>
+<h3>Buttons</h3>
+
+<h4>Standard position</h4>
+
+<form>
+  <label>
+    Email address
+    <input type="email" tabindex="1">
+  </label>
+  <label>
+    Password
+    <input type="password" tabindex="1">
+  </label>
+  <button type="submit" class="button">Login</button>
+</form>
+
+<form class="form-horizontal">
+  <label>
+    <div>Email address</div>
+    <input type="email" tabindex="1">
+  </label>
+  <label>
+    <div>Password</div>
+    <input type="password" tabindex="1">
+  </label>
+  <button type="submit" class="button">Login</button>
+</form>
+
+<h4>Right aligned</h4>
+
+<form>
+  <label>
+    Email address
+    <input type="email" tabindex="1">
+  </label>
+  <label>
+    Password
+    <input type="password" tabindex="1">
+  </label>
+  <div class="submit-wrapper">
+    <button type="submit" class="button">Login</button>
+  </div>
+</form>
+
+<form class="form-horizontal">
+  <label>
+    <div>Email address</div>
+    <input type="email" tabindex="1">
+  </label>
+  <label>
+    <div>Password</div>
+    <input type="password" tabindex="1">
+  </label>
+  <div class="submit-wrapper">
+    <button type="submit" class="button">Login</button>
+  </div>
+</form>
+
+<div class="demo-actions">
+  <a href="/mosto.html" title="Back to the article"><i class="icon-arrow-left"></i> Back to the article</a>
+  <a href="https://github.com/valdelama/mosto/archive/master.zip" title="Download from Github">Download <i class="icon-download"></i></a>
+  <a href="https://github.com/valdelama/mosto" title="Watch on Github">Watch on Github <i class="icon-github"></i></a>
+</div>
+{% endblock %}

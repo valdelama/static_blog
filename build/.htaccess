@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /
+
+
+RewriteCond %{HTTP_HOST} .
+RewriteCond %{HTTP_HOST} !^www\.valdelama\.com [NC]
+RewriteRule (.*) http://www.valdelama.com/$1 [R=301,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ /$1.html [L]
+
+RewriteCond %{THE_REQUEST} \ /+([^\?\ ]+)\.html
+RewriteRule ^ /%1 [L,R=301]
+
+Redirect 301 /mosto-form-demo http://www.valdelama.com/demo/mosto-form-demo
+
+<FilesMatch "\.(ttf|otf)$">
+<IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
+</FilesMatch>

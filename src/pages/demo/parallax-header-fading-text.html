@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Parallax header with fading text</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/parallax-header-fading-text.css">
+  </head>
+
+  <body>
+    <div class="intro js-intro">
+      <div class="title js-title">
+        <h1 class="title__main">It always seems impossible until its done.</h1>
+        <h2 class="title__secondary">Nelson Mandela</h2>
+      </div>
+    </div>
+    <div class="content">
+      <div class="container">
+        <h3>A Country Childhood</h3>
+        <p>Because of the universal respect the regent enjoyed—from both black and white—and the seemingly untempered power that he wielded, I saw chieftaincy as being the very center around which life revolved. The power and influence of chieftaincy pervaded every aspect of our lives in Mqhekezweni and was the preeminent means through which one could achieve influence and status.</p>
+        <p>My later notions of leadership were profoundly influenced by observing the regent and his court. I watched and learned from the tribal meetings that were regularly held at the Great Place. These were not scheduled, but were called as needed, and were held to discuss national matters such as a drought, the culling of cattle, policies ordered by the high commissioner or magistrate, or new laws decreed by the government. All Thembus were free to come--and a great many did, on horseback or by foot.</p>
+        <p>On these occasions, the regent was surrounded by his amapakati, literally "the middle ones," a group of councilors of high rank who functioned as the regent's parliament and judiciary. They were wise men who retained the knowledge of tribal history and custom in their heads and whose opinions carried great weight.</p>
+        <p>Letters advising these chiefs and headmen of a meeting were dispatched from the regent, and soon the Great Place became alive with important visitors and travelers from all over Thembuland. The guests would gather in the courtyard in front of the regent's house and he would open the meeting by thanking everyone for coming and explaining why he had summoned them. From that point on, he would not utter another word until the meeting was nearing its end.</p>
+        <p>Everyone who wanted to speak did so. It was democracy in its purest form. There may have been a hierarchy of importance among the speakers, but everyone was heard, chief and subject, warrior and medicine man, shopkeeper and farmer, landowner and laborer. People spoke without interruption and the meetings lasted for many hours. The foundation of self-government was that all men were free to voice their opinions and equal in their value as citizens. (Women, I am afraid, were deemed second-class citizens.)</p>
+        <p>A great banquet was served during the day, and I often gave myself a bellyache by eating too much while listening to speaker after speaker. I noticed how some speakers rambled and never seemed to get to the point. I grasped how others came to the matter at hand directly, and who made a set of arguments succinctly and cogently. I observed how some speakers used emotion and dramatic language, and tried to move the audience with such techniques, while other speakers were sober and even, and shunned emotion.</p>
+        <p>At first, I was astonished by the vehemence—and candor—with which people criticized the regent. He was not above criticism--in fact, he was often the principal target of it. But no matter how flagrant the charge, the regent simply listened, not defending himself, showing no emotion at all.</p>
+        <p>The meetings would continue until some kind of consensus was reached. They ended in unanimity or not at all. Unanimity, however, might be an agreement to disagree, to wait for a more propitious time to propose a solution. Democracy meant all men were to be heard, and a decision was taken together as a people. Majority rule was a foreign notion. A minority was not to be crushed by a majority.</p>
+        <p>Only at the end of the meeting, as the sun was setting, would the regent speak. His purpose was to sum up what had been said and form some consensus among the diverse opinions. But no conclusion was forced on people who disagreed. If no agreement could be reached, another meeting would be held. At the very end of the council, a praise-singer or poet would deliver a panegyric to the ancient kings, and a mixture of compliments to and satire on the present chiefs, and the audience, led by the regent, would roar with laughter.</p>
+        <p>As a leader, I have always followed the principles I first saw demonstrated by the regent at the Great Place. I have always endeavored to listen to what each and every person in a discussion had to say before venturing my own opinion. Oftentimes, my own opinion will simply represent a consensus of what I heard in the discussion. I always remember the regent's axiom: a leader, he said, is like a shepherd. He stays behind the flock, letting the most nimble go out ahead, whereupon the others follow, not realizing that all along they are being directed from behind.</p>
+      </div>
+    </div>
+    <script src="/js/all.js"></script>
+    <script>
+
+      var latestKnownScrollY = 0,
+          ticking = false;
+
+      function update() {
+        var $intro = $('.js-intro'),
+            $introTitle = $(".js-title"),
+            introHeight = $intro.outerHeight(),
+            scrolled = $(window).scrollTop(),
+            easeHalfIntroHeight = easeInOutQuad(scrolled, 0, introHeight / 2, introHeight),
+            easeOpacityToZero = easeInOutQuad(scrolled, 1, -1, introHeight),
+            easeQuarterIntroHeight = easeInOutQuad(scrolled, 0, introHeight / 4, introHeight);
+
+        $intro.css("transform","translate3d(0px," +  easeHalfIntroHeight  + "px, 0px)");
+        $introTitle.css({
+          "opacity": easeOpacityToZero,
+          "transform": "translate3d(0px," +  easeQuarterIntroHeight  + "px, 0px)"
+        });
+        ticking = false;
+      }
+
+      function onScroll() {
+      	latestKnownScrollY = window.scrollY;
+        requestTick();
+      }
+
+      function requestTick() {
+      	if(!ticking) {
+      		requestAnimationFrame(update);
+          ticking = true;
+      	}
+
+      }
+      $(window).scroll(onScroll);
+
+      easeInOutQuad = function (t, b, c, d) {
+        // t=elapsed, b=initial value, c=amount of change, d=duration
+        return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+      };
+
+      // Source: http://www.html5rocks.com/en/tutorials/speed/animations/
+    </script>
+  </body>
+</html>

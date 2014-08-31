@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive calendar - Valdelama</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+    <link href="/css/standalone/cal.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-38252479-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <div class="container header">
+      <div class="logo"><a href="/"><img src="/images/logo.svg"></a></div>
+      <div class="strapline">
+        <h1>The online home of Daniel Winer</h1>
+        <a href="https://plus.google.com/111162359938952020000" class="social social--gplus">
+          <i class="icon-gplus"></i>
+        </a>
+        <a href="https://twitter.com/valdelama" class="social social--twitter">
+          <i class="icon-twitter"></i>
+        </a>
+        <a href="http://www.linkedin.com/in/danwiner" class="social social--linkedin">
+          <i class="icon-linkedin"></i>
+        </a>
+        <a href="https://github.com/valdelama" class="social social--github">
+          <i class="icon-github"></i>
+        </a>
+      </div>
+    </div><!-- end .header -->
+    <div class="container content">
+      
+<article class="post_main">
+  <h2>
+    Responsive calendar
+    <span class="date">Feb 09, 2013</span>
+  </h2>
+  <p>Just a simple calendar I made, more than anything as a proof of concept that
+it can be easily done without using a table.</p>
+<!--more-->
+<p>One thing to note though is that this uses some CSS3 that won&#39;t work in older browsers, in particular:</p>
+<pre>
+  <code class="language-css">
+.cal_row &gt; div:first-child,
+.cal_row &gt; div:nth-child(7n+8) {
+  border-left: 1px solid #e6e6e6;
+}
+  </code>
+</pre>
+
+<p>This gives a left border to the first day of each row (all the other days
+have a right border only so as not to end up with a thick, double border). If
+you need it to look perfect in old browsers then this is an easy fix with a bit
+of javascript.</p>
+
+<p class="space_below">The idea behind this calendar was that
+the user would click on the day to add a new event and click on the link inside
+the day to edit existing events, this would happen in a modal window. I&#39;ll
+update it in another post with some of the styles for those actions. </p>
+
+<div class="calendar">
+<div class="day_names cal_row">
+<div>Sun<span>day</span></div>
+<div>Mon<span>day</span></div>
+<div>Tue<span>sday</span></div>
+<div>Wed<span>nesday</span></div>
+<div>Thur<span>sday</span></div>
+<div>Fri<span>day</span></div>
+<div>Sat<span>urday</span></div>
+</div>
+<div class="cal_row">
+<div class="prev_month">
+<i>29</i>
+</div>
+<div class="prev_month">
+<i>30</i>
+</div>
+<div>
+<i>1</i>
+</div>
+<div>
+<i>2</i>
+</div>
+<div>
+<i>3</i>
+</div>
+<div>
+<i>4</i>
+</div>
+<div>
+<i>5</i>
+</div>
+<div>
+<i>6</i>
+</div>
+<div>
+<i>7</i>
+</div>
+<div>
+<i>8</i>
+</div>
+<div>
+<i>9</i>
+</div>
+<div class="has_event">
+<i>10</i>
+<a href="#">Bob - Anniversary</a>
+</div>
+<div>
+<i>11</i>
+</div>
+<div>
+<i>12</i>
+</div>
+<div>
+<i>13</i>
+</div>
+<div>
+<i>14</i>
+</div>
+<div>
+<i>15</i>
+</div>
+<div>
+<i>16</i>
+</div>
+<div>
+<i>17</i>
+</div>
+<div>
+<i>18</i>
+</div>
+<div>
+<i>19</i>
+</div>
+<div>
+<i>20</i>
+</div>
+<div>
+<i>21</i>
+</div>
+<div>
+<i>22</i>
+</div>
+<div>
+<i>23</i>
+</div>
+<div>
+<i>24</i>
+</div>
+<div>
+<i>25</i>
+</div>
+<div>
+<i>26</i>
+</div>
+<div>
+<i>27</i>
+</div>
+<div>
+<i>28</i>
+</div>
+<div>
+<i>29</i>
+</div>
+<div>
+<i>30</i>
+</div>
+<div>
+<i>31</i>
+</div>
+<div class="next_month">
+<i>June 1</i>
+</div>
+<div class="next_month">
+<i>2</i>
+</div>
+</div>
+</div>
+
+</article>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'valdelama'; // required: replace example with your forum shortname
+var disqus_identifier = 'Responsive calendar';
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+
+    </div>
+    <script type="text/javascript" src="/js/all.js"></script>
+    
+
+    <div class="footer">
+      <div class="container">
+        Copyright Valdelama 2014
+      </div>
+    </div>
+  </body>
+</html>
