@@ -16,12 +16,13 @@ footer_extras: |
     });
   </script>
 ---
+
 <p>Forms aren't much fun to build, I think most web designers find them pretty tedious to design and code. For that reason I wanted to make this framework which should suit most situations where you need a form on your site.</p>
 <!--more-->
 <div class="demo-actions">
-  <a href="https://github.com/valdelama/mosto/archive/master.zip" title="Download from Github">Download <i class="icon-download"></i></a>
-  <a href="/demo/mosto-form-demo.html" title="View the demo">View the demo <i class="icon-export"></i></a>
-  <a href="https://github.com/valdelama/mosto" title="Watch on Github">Watch on Github <i class="icon-github"></i></a>
+  <a href="https://github.com/valdelama/mosto/archive/master.zip" title="Download from Github">Download</a>
+  <a href="/demo/mosto-form-demo.html" title="View the demo">View the demo</a>
+  <a href="https://github.com/valdelama/mosto" title="Watch on Github">Watch on Github</a>
 </div>
 
 <h4>Why not just use a framework like Bootstrap or Foundation?</h4>
@@ -455,7 +456,6 @@ footer_extras: |
   </div>
 </div>
 
-
 <h4 class="sub_section">3.3 Help message displayed on :focus</h4>
 <p>If you want to keep your forms as clean and uncluttered as possible you might prefer to display the relevant help message only when the user focuses on (clicks inside) the input. All you have to do is follow the same code structure as above but add the class "hint" to the <code class="language-markup">&lt;span&gt;</code>.</p>
 <ul class="nav horizontal tabs" data-trigger="tab" data-content=".tab-content3-3">
@@ -524,7 +524,6 @@ footer_extras: |
 </pre>
     </div>
   </div>
-
 
 <h3 class="section">4. Overriding the defaults</h3>
 <p>Defaults are great but sometimes you need to do things a bit differently...here are some examples:</p>
@@ -866,7 +865,6 @@ footer_extras: |
   </div>
 </div>
 
-
 <h4 class="sub_section">6.3 Both</h4>
 <p>You can use the prepend and append together, just combine all the classes above.</p>
 <ul class="nav horizontal tabs" data-trigger="tab" data-content=".tab-content6-3">
@@ -901,7 +899,6 @@ footer_extras: |
 </pre>
   </div>
 </div>
-
 
 <h3 class="section">7. Search</h4>
 <p>This form relies on using <code class="language-markup">&lt;input class=&quot;search-input&quot;&gt;</code> and the submit button inmediately following the input using <code class="language-markup">&lt;button class=&quot;search-submit&quot;&gt;</code>.</p>
@@ -956,6 +953,7 @@ footer_extras: |
         <span class="message">Please use a valid email address</span>
       </label>
     </form>
+
   </div>
   <div>
 <pre>
@@ -969,17 +967,17 @@ footer_extras: |
 &lt;/form&gt;
 
 &lt;form class=&quot;form-horizontal&quot;&gt;
-  &lt;label class=&quot;error&quot;&gt;
-    &lt;div&gt;Email address&lt;/div&gt;
-    &lt;input type=&quot;email&quot; value=&quot;bob@something.domain&quot; tabindex=&quot;1&quot;&gt;
-    &lt;span class=&quot;message&quot;&gt;Please use a valid email address&lt;/span&gt;
-  &lt;/label&gt;
+&lt;label class=&quot;error&quot;&gt;
+&lt;div&gt;Email address&lt;/div&gt;
+&lt;input type=&quot;email&quot; value=&quot;bob@something.domain&quot; tabindex=&quot;1&quot;&gt;
+&lt;span class=&quot;message&quot;&gt;Please use a valid email address&lt;/span&gt;
+&lt;/label&gt;
 &lt;/form&gt;
-  </code>
+</code>
+
 </pre>
   </div>
 </div>
-
 
 <h3 class="section">9. Fieldsets and legends</h3>
 <p>Fieldsets and legends can be great for breaking up long forms, just use them the way you normally would:</p>
@@ -1045,6 +1043,7 @@ footer_extras: |
         </label>
       </fieldset>
     </form>
+
   </div>
   <div>
 <pre>
@@ -1073,42 +1072,42 @@ footer_extras: |
     &lt;/label&gt;
   &lt;/fieldset&gt;
 
-  &lt;fieldset&gt;
-    &lt;legend&gt;Address&lt;/legend&gt;
-    &lt;label&gt;
-      &lt;div&gt;First name&lt;/div&gt;
-      &lt;input type=&quot;text&quot; placeholder=&quot;First name&quot; tabindex=&quot;1&quot;&gt;
-    &lt;/label&gt;
-    &lt;label&gt;
-      &lt;div&gt;Last name&lt;/div&gt;
-      &lt;input type=&quot;text&quot; placeholder=&quot;Last name&quot; tabindex=&quot;1&quot;&gt;
-    &lt;/label&gt;
-    &lt;label&gt;
-      &lt;div&gt;Address&lt;/div&gt;
-      &lt;textarea placeholder=&quot;Address (House number and street)&quot; tabindex=&quot;1&quot;&gt;&lt;/textarea&gt;
-    &lt;/label&gt;
-    &lt;label&gt;
-      &lt;div&gt;City&lt;/div&gt;
-      &lt;input type=&quot;text&quot; placeholder=&quot;City&quot; tabindex=&quot;1&quot;&gt;
-    &lt;/label&gt;
-    &lt;label&gt;
-      &lt;div&gt;Postcode&lt;/div&gt;
-      &lt;input type=&quot;text&quot; placeholder=&quot;Postcode&quot; tabindex=&quot;1&quot;&gt;
-    &lt;/label&gt;
-    &lt;label&gt;
-      &lt;div&gt;Country&lt;/div&gt;
-      &lt;select tabindex=&quot;1&quot;&gt;
-        &lt;option&gt;Spain&lt;/option&gt;
-        &lt;option&gt;United Kingdom&lt;/option&gt;
-      &lt;/select&gt;
-    &lt;/label&gt;
-  &lt;/fieldset&gt;
+&lt;fieldset&gt;
+&lt;legend&gt;Address&lt;/legend&gt;
+&lt;label&gt;
+&lt;div&gt;First name&lt;/div&gt;
+&lt;input type=&quot;text&quot; placeholder=&quot;First name&quot; tabindex=&quot;1&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+&lt;div&gt;Last name&lt;/div&gt;
+&lt;input type=&quot;text&quot; placeholder=&quot;Last name&quot; tabindex=&quot;1&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+&lt;div&gt;Address&lt;/div&gt;
+&lt;textarea placeholder=&quot;Address (House number and street)&quot; tabindex=&quot;1&quot;&gt;&lt;/textarea&gt;
+&lt;/label&gt;
+&lt;label&gt;
+&lt;div&gt;City&lt;/div&gt;
+&lt;input type=&quot;text&quot; placeholder=&quot;City&quot; tabindex=&quot;1&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+&lt;div&gt;Postcode&lt;/div&gt;
+&lt;input type=&quot;text&quot; placeholder=&quot;Postcode&quot; tabindex=&quot;1&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+&lt;div&gt;Country&lt;/div&gt;
+&lt;select tabindex=&quot;1&quot;&gt;
+&lt;option&gt;Spain&lt;/option&gt;
+&lt;option&gt;United Kingdom&lt;/option&gt;
+&lt;/select&gt;
+&lt;/label&gt;
+&lt;/fieldset&gt;
 &lt;/form&gt;
-  </code>
+</code>
+
 </pre>
   </div>
 </div>
-
 
 <h3 class="section">10. Buttons</h3>
 <p>There is some default styling for buttons, the basic uses a .button class and for your primary action combine it with .primary. There are also two positions for buttons, either sitting directly below the form or right aligned.</p>
@@ -1143,6 +1142,7 @@ footer_extras: |
       </label>
       <button type="submit" class="button">Login</button>
     </form>
+
   </div>
   <div>
 <pre>
@@ -1160,21 +1160,21 @@ footer_extras: |
 &lt;/form&gt;
 
 &lt;form class=&quot;form-horizontal&quot;&gt;
-  &lt;label&gt;
-    &lt;div&gt;Email address&lt;/div&gt;
-    &lt;input type=&quot;email&quot; tabindex=&quot;1&quot;&gt;
-  &lt;/label&gt;
-  &lt;label&gt;
-    &lt;div&gt;Password&lt;/div&gt;
-    &lt;input type=&quot;password&quot; tabindex=&quot;1&quot;&gt;
-  &lt;/label&gt;
-  &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Login&lt;/button&gt;
+&lt;label&gt;
+&lt;div&gt;Email address&lt;/div&gt;
+&lt;input type=&quot;email&quot; tabindex=&quot;1&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+&lt;div&gt;Password&lt;/div&gt;
+&lt;input type=&quot;password&quot; tabindex=&quot;1&quot;&gt;
+&lt;/label&gt;
+&lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Login&lt;/button&gt;
 &lt;/form&gt;
-  </code>
+</code>
+
 </pre>
   </div>
 </div>
-
 
 <h4>10.2 Right aligned</h4>
 <p>Just wrap your submit button in a <code class="language-markup">&lt;div class=&quot;submit-wrapper&quot;&gt;</code>.</p>
@@ -1211,6 +1211,7 @@ footer_extras: |
         <button type="submit" class="button">Login</button>
       </div>
     </form>
+
   </div>
   <div>
 <pre>
@@ -1230,19 +1231,20 @@ footer_extras: |
 &lt;/form&gt;
 
 &lt;form class=&quot;form-horizontal&quot;&gt;
-  &lt;label&gt;
-    &lt;div&gt;Email address&lt;/div&gt;
-    &lt;input type=&quot;email&quot; tabindex=&quot;1&quot;&gt;
-  &lt;/label&gt;
-  &lt;label&gt;
-    &lt;div&gt;Password&lt;/div&gt;
-    &lt;input type=&quot;password&quot; tabindex=&quot;1&quot;&gt;
-  &lt;/label&gt;
-  &lt;div class=&quot;submit-wrapper&quot;&gt;
-    &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Login&lt;/button&gt;
-  &lt;/div&gt;
+&lt;label&gt;
+&lt;div&gt;Email address&lt;/div&gt;
+&lt;input type=&quot;email&quot; tabindex=&quot;1&quot;&gt;
+&lt;/label&gt;
+&lt;label&gt;
+&lt;div&gt;Password&lt;/div&gt;
+&lt;input type=&quot;password&quot; tabindex=&quot;1&quot;&gt;
+&lt;/label&gt;
+&lt;div class=&quot;submit-wrapper&quot;&gt;
+&lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Login&lt;/button&gt;
+&lt;/div&gt;
 &lt;/form&gt;
-  </code>
+</code>
+
 </pre>
   </div>
 </div>
@@ -1269,6 +1271,7 @@ footer_extras: |
         <input type="email" tabindex="1">
       </label>
     </form>
+
   </div>
   <div>
 <pre>
@@ -1281,12 +1284,13 @@ footer_extras: |
 &lt;/form&gt;
 
 &lt;form class=&quot;form-horizontal&quot;&gt;
-  &lt;label class=&quot;required&quot;&gt;
-    &lt;div&gt;Email&lt;/div&gt;
-    &lt;input type=&quot;email&quot; tabindex=&quot;1&quot;&gt;
-  &lt;/label&gt;
+&lt;label class=&quot;required&quot;&gt;
+&lt;div&gt;Email&lt;/div&gt;
+&lt;input type=&quot;email&quot; tabindex=&quot;1&quot;&gt;
+&lt;/label&gt;
 &lt;/form&gt;
-  </code>
+</code>
+
 </pre>
   </div>
 </div>
